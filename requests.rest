@@ -12,8 +12,12 @@ POST http://localhost:8080/api/auth/signin
 Content-type: application/json
 
 {
-    "username": "Itachi Uchi",
-    "password": "0000000"
+    "username": "Itachi Uchiha",
+    "password": "000000"
 }
+
+###
+GET http://localhost:8080/api/mangas
+Authorization: Bearer jesuislà
 
 # PRODUCTION

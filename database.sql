@@ -27,3 +27,9 @@ CREATE TABLE scores (
     user_id INT REFERENCES users(id),
     manga_id INT REFERENCES mangas(id)
 );
+
+INSERT INTO mangas (name, picture) 
+VALUES ('Naruto', 'https://res.cloudinary.com/dumxkdcvd/image/upload/v1673436818/anime_logo_naruto_en_wxn0f9.webp'),
+('Naruto Shippuden', 'https://res.cloudinary.com/dumxkdcvd/image/upload/v1673437369/anime_logo_naruto_s_en_exnp65.webp'),
+('Boruto: Naruto Next Generations', 'https://res.cloudinary.com/dumxkdcvd/image/upload/v1673437370/anime_logo_boruto_en_ftmqjh.webp')
+

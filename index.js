@@ -2,6 +2,7 @@ import express, {json} from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth-routes.js";
+import mangaRouter from "./routes/manga-routes.js";
 
 dotenv.config();
 
@@ -17,5 +18,6 @@ app.get("/", (req, res)=>{
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api", mangaRouter);
 
 app.listen(PORT, ()=>console.log(`Server is running on port ${PORT}...`));
