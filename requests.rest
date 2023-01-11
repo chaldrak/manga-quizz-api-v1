@@ -1,0 +1,19 @@
+# DEVELOPMENT
+POST http://localhost:8080/api/auth/signup
+Content-type: application/json
+
+{
+    "username": "Itachi Uchiha",
+    "password": "000000"
+}
+
+###
+POST http://localhost:8080/api/auth/signin
+Content-type: application/json
+
+{
+    "username": "Itachi Uchi",
+    "password": "0000000"
+}
+
+# PRODUCTION
