@@ -18,6 +18,6 @@ Content-type: application/json
 
 ###
 GET http://localhost:8080/api/mangas
-Authorization: Bearer jesuislà
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNDc0MzUwLCJleHAiOjE2NzM2NDcxNTB9.IDB4KxuabuWhPLBOVVBUWfLmHQiVFwmLKOQAHy3gRC8
 
 # PRODUCTION
