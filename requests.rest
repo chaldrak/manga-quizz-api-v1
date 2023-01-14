@@ -18,10 +18,33 @@ Content-type: application/json
 
 ###
 GET http://localhost:8080/api/mangas
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNDc0MzUwLCJleHAiOjE2NzM2NDcxNTB9.IDB4KxuabuWhPLBOVVBUWfLmHQiVFwmLKOQAHy3gRC8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
 
 ###
 GET http://localhost:8080/api/mangas/3/characters
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNDc0MzUwLCJleHAiOjE2NzM2NDcxNTB9.IDB4KxuabuWhPLBOVVBUWfLmHQiVFwmLKOQAHy3gRC8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
+###
+GET http://localhost:8080/api/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
+###
+PUT http://localhost:8080/api/users/1
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
+{
+    "username": "Sasuke Uchiha",
+    "password": "123456"
+}
+
+###
+PUT http://localhost:8080/api/users/1/avatar
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
+{
+    "avatar": "/logo.png"
+}
 
 # PRODUCTION
