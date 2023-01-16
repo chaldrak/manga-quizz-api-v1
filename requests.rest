@@ -3,7 +3,7 @@ POST http://localhost:8080/api/auth/signup
 Content-type: application/json
 
 {
-    "username": "Itachi Uchiha",
+    "username": "Neji Hyuga",
     "password": "000000"
 }
 
@@ -46,5 +46,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hb
 {
     "avatar": "/logo.png"
 }
+
+
+###
+POST http://localhost:8080/api/users/8/scores
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
+{
+    "manga_id": 1,
+    "total": 300
+}
+
+###
+GET http://localhost:8080/api/mangas/1/scores
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
+###
+GET http://localhost:8080/api/users/4/mangas/2/scores
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+
 
 # PRODUCTION

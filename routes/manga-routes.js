@@ -23,4 +23,15 @@ router.get("/mangas/:id/characters", authenticateToken, async (req, res)=>{
     }
 });
 
+// Get all the high scores by manga order by total 
+router.get("/mangas/:id/scores", authenticateToken, async (req, res)=>{
+    try {
+        const id = parseInt(req.params.id);
+        const scores = await pool.query("SELECT username, score, avatar FROM (SELECT MAX(total) AS score, user_id FROM scores WHERE manga_id = $1 GROUP BY user_id) AS max JOIN users ON max.user_id = users.id ORDER BY score DESC", [id]);
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
 export default router;

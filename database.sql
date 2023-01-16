@@ -28,7 +28,7 @@ CREATE TABLE characters (
 
 CREATE TABLE scores (
     id SERIAL PRIMARY KEY,
-    total TEXT NOT NULL,
+    total INT NOT NULL,
     created_date TIMESTAMP DEFAULT current_timestamp,
     user_id INT REFERENCES users(id),
     manga_id INT REFERENCES mangas(id)
