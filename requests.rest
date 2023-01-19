@@ -3,8 +3,9 @@ POST http://localhost:8080/api/auth/signup
 Content-type: application/json
 
 {
-    "username": "Neji Hyuga",
-    "password": "000000"
+    "username": "Obito Hyuga",
+    "password": "000000",
+    "confirmPass": "000000"
 }
 
 ###
@@ -12,7 +13,7 @@ POST http://localhost:8080/api/auth/signin
 Content-type: application/json
 
 {
-    "username": "Itachi Uchiha",
+    "username": "Obito Hyuga",
     "password": "000000"
 }
 
@@ -29,13 +30,13 @@ GET http://localhost:8080/api/users/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
 
 ###
-PUT http://localhost:8080/api/users/1
+PUT http://localhost:8080/api/users/35
 Content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzUsInVzZXJuYW1lIjoiT2JpdG8gSHl1Z2EiLCJpYXQiOjE2NzQxMzg3MTksImV4cCI6MTY3NDMxMTUxOX0.fEXcsH1gJijkd42BJAIklxNlo_h2i_Zv3yRw07pVHCI
 
 {
-    "username": "Sasuke Uchiha",
-    "password": "123456"
+    "username": "Obito Uchiha",
+    "password": "000000"
 }
 
 ###
