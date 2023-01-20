@@ -13,7 +13,7 @@ POST http://localhost:8080/api/auth/signin
 Content-type: application/json
 
 {
-    "username": "Obito Hyuga",
+    "username": "Obito Uchiha",
     "password": "000000"
 }
 
@@ -48,6 +48,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hb
     "avatar": "/logo.png"
 }
 
+###
+PUT http://localhost:8080/api/users/35/info
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzUsInVzZXJuYW1lIjoiT2JpdG8gVWNoaWhhIiwiYXZhdGFyIjoiaHR0cHM6Ly9yZXMuY2xvdWRpbmFyeS5jb20vZHVteGtkY3ZkL2ltYWdlL3VwbG9hZC92MTY3Mzk3Mjg2MS91d3AyMjAyODA2X211M3ZnaC5qcGciLCJpYXQiOjE2NzQyMjIyMTQsImV4cCI6MTY3NDM5NTAxNH0.dNILvpMJMw76uwAlUV1hieZmmhDAEPh2_Chb4XcpY3w
+
+{
+    "username": "Tobi Uchiha"
+}
 
 ###
 POST http://localhost:8080/api/users/8/scores

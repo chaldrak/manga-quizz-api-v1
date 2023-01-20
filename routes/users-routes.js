@@ -40,6 +40,26 @@ router.put("/users/:id", authenticateToken, async (req, res)=>{
     }
 });
 
+// Update an user info
+router.put("/users/:id/info", authenticateToken, async (req, res)=>{
+    try {
+        const id = parseInt(req.params.id);
+        const {username} = req.body;
+        const user = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
+        if (user.rowCount === 0) return res.status(401).json({error: "User not found"});
+        if (username.length > 15) {
+            return res.status(400).json({error: "Username too long maximum 15"});
+        }
+        if (!username) {
+            return res.status(400).json({error: "Username might not be empty"});
+        }
+        const newUser = await pool.query("UPDATE users SET username = $1 WHERE id = $2 RETURNING *", [username, id]);
+        res.status(200).json({user: newUser.rows[0]});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+});
+
 // Update user's avatar
 router.put("/users/:id/avatar", authenticateToken, async (req, res)=>{
     try {
