@@ -86,4 +86,5 @@ GET http://localhost:8080/api/users/4/mangas/2/scores
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJJdGFjaGkgVWNoaWhhIiwiaWF0IjoxNjczNzAwMDcxLCJleHAiOjE2NzM4NzI4NzF9.U-bhfUXsEoUcuGSbq9JxYoNH1Scl39GyZjuNDAjAopc
 
 
-# PRODUCTION
+### PRODUCTION
+GET https://manga-quizz-api.onrender.com

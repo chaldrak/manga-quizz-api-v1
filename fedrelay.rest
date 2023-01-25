@@ -1,0 +1,140 @@
+### Create an account
+POST http://api.fedrelay.com/user/create/
+Content-type: application/json
+
+{
+    "username": "joe@test.com",
+    "email": "joe@test.com",
+    "phone": "",
+    "password": "00000000"
+}
+
+### Create a session
+POST http://api.fedrelay.com/user/login/
+Content-type: application/json
+
+{
+    "username": "joe@test.com",
+    "password": "00000000"
+}
+
+### Logout (Needs the token)
+POST http://api.fedrelay.com/user/logout/
+Content-type: application/json
+Authorization: token cd3479dcc37e8daf91b6fa3a1d8b451f0109e8014f0db3d2bc3ec5e3ab7e514d
+
+### Change avatar
+PUT http://api.fedrelay.com/dashbord/avatar/1/
+Content-type: application/json
+
+{
+    "avatar": "https://res.cloudinary.com/dumxkdcvd/image/upload/v1674474627/mangaquizzuseravatar/James_Bond_vppjwl.png"
+}
+
+### Create profil
+POST http://api.fedrelay.com/dashbord/profil/
+Content-type: application/json
+
+{
+    "user": 1, 
+    "nom": "GOGO",
+    "prenom": "Christian",
+    "telephone": "6589654521",
+    "email": "florent@gmail.com",
+    "profession": "Ingénieur",
+    "pays": "Bénin",
+    "ville": "Cotonou",
+    "quartier": "Finanfa"
+}
+
+
+### Create a delivery
+POST http://api.fedrelay.com/delivery/create/
+Content-type: application/json
+
+{
+    "user":1,
+    "client_id":1,
+    "nomEmetteur": "SEDEGNAN",
+    "prenomEmetteur": "Victoire",
+    "telephoneEmetteur": "61765590",
+    "lieuColis": "Ahelawadjè",
+    "detailLocalisation": "Non loin du carrefour les trois bandes",
+    "villeReception": "Porto Novo",
+    "pointRelais": "Kandevie",
+    "notification": "Ce colis des trucs",
+    "nomDestinataire": "AMOUSSOU",
+    "prenomDestinataire": "Yvonne",
+    "telephoneDestinataire": "61795560",
+    "emailDestinataire": "ayvonne@gmail.com",
+    "typeColis": "Du gari à l'intérieur",
+    "poids": "54 kg",
+    "description": "RAS"
+}
+
+### Get an user's deliverys
+GET http://api.fedrelay.com/delivery/deliverys/1
+
+### Details of a delivery
+GET http://api.fedrelay.com/delivery/1
+
+### Follow a delivery
+POST http://api.fedrelay.com/delivery/followUp/
+Content-type: application/json
+
+{
+    "follow_code": "R1591y"
+}
+
+### Assistance
+POST http://api.fedrelay.com/chat/client/
+Content-type: application/json
+
+{
+    "user": 1,
+    "message": "My first message. Hello World !"
+}
+
+### Newletters
+POST http://api.fedrelay.com/newsletter/
+Content-type: application/json
+
+{
+    "email": "test@test.com"
+}
+
+### Simulation
+POST http://api.fedrelay.com/simulator/
+Content-type: application/json
+
+{
+    "localisation": "cotonou",
+    "product_type": "Lourd",
+    "delivery_point": "Parakou",
+    "delivery_delay": "3 jours"
+}
+
+### Partnership
+POST http://api.fedrelay.com/partenariat/
+Content-type: application/json
+
+{
+    "nom":"Bobo",
+    "prenom":"Deg",
+    "denomination":"Chine",
+    "email":"bobmanou@gmail.com",
+    "typ":"Signalisation",
+    "object":"porto-novo",
+    "lettre":"Le lorem ipsum est, en "
+}
+
+### Contact
+POST http://api.fedrelay.com/contact/
+Content-type: application/json
+
+{
+    "nom":"Bobo",
+    "prenom":"Deg",
+    "telephone":"98565256",
+    "message":"Le lorem ipsum est, en"
+}

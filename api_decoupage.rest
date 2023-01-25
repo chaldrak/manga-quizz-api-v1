@@ -1,0 +1,11 @@
+### Get all the Departements
+GET http://decoupage-bj.innov-prime.com/departements/
+
+### Get the communes based on a departement
+GET http://decoupage-bj.innov-prime.com/3/communes/
+
+### Get the arrond based on a commune
+GET http://decoupage-bj.innov-prime.com/16/arrondissements/
+
+### Get the quartiers based on an arrond
+GET http://decoupage-bj.innov-prime.com/97/quartiers/
