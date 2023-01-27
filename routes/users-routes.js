@@ -93,4 +93,15 @@ router.get("/users/:id1/mangas/:id2/scores", authenticateToken, async (req, res)
     }
 })
 
+// Delete all the scores of a specific user
+router.delete("/users/:id/scores", authenticateToken, async (req, res)=>{
+    try {
+        const user_id = parseInt(req.params.id);
+        const scores = await pool.query("DELETE FROM scores WHERE user_id = $1", [user_id]);
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
 export default router;

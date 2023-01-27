@@ -1,27 +1,27 @@
 ### Create an account
-POST http://api.fedrelay.com/user/create/
+POST http://api.fedrelay.com/user/create
 Content-type: application/json
 
 {
-    "username": "joe@test.com",
-    "email": "joe@test.com",
-    "phone": "",
+    "username": "+22996655555",
+    "email": "",
+    "phone": "+22996655555",
     "password": "00000000"
 }
 
 ### Create a session
-POST http://api.fedrelay.com/user/login/
+POST http://api.fedrelay.com/user/login
 Content-type: application/json
 
 {
-    "username": "joe@test.com",
+    "username": "+22996655555",
     "password": "00000000"
 }
 
 ### Logout (Needs the token)
-POST http://api.fedrelay.com/user/logout/
+POST http://api.fedrelay.com/user/logout
 Content-type: application/json
-Authorization: token cd3479dcc37e8daf91b6fa3a1d8b451f0109e8014f0db3d2bc3ec5e3ab7e514d
+Authorization: token 2da5176aa67afb4579404d7faa0a7ef5100c6499fdb681a945bfdde81e3c7d29
 
 ### Change avatar
 PUT http://api.fedrelay.com/dashbord/avatar/1/
@@ -49,7 +49,7 @@ Content-type: application/json
 
 
 ### Create a delivery
-POST http://api.fedrelay.com/delivery/create/
+POST http://api.fedrelay.com/delivery/3c1ededadc207892b64353cac5d53dfd87f5fa430ccd0b2a0a8645f5796290ce/delivery/create
 Content-type: application/json
 
 {
@@ -73,7 +73,7 @@ Content-type: application/json
 }
 
 ### Get an user's deliverys
-GET http://api.fedrelay.com/delivery/deliverys/1
+GET http://api.fedrelay.com/delivery/1/3c1ededadc207892b64353cac5d53dfd87f5fa430ccd0b2a0a8645f5796290ce/deliveries
 
 ### Details of a delivery
 GET http://api.fedrelay.com/delivery/1
