@@ -16,6 +16,17 @@ router.get("/users/:id", authenticateToken, async (req, res)=>{
     }
 });
 
+// Delete an user account
+router.delete("/users/:id", authenticateToken, async (req, res)=>{
+    try {
+        const id = parseInt(req.params.id);
+        const user = await pool.query("DELETE FROM users WHERE id = $1", [id]);
+        res.status(200).json({user: user.rows[0]});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+});
+
 // Update an user password
 router.put("/users/:id/password", authenticateToken, async (req, res)=>{
     try {
