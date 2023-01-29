@@ -20,6 +20,7 @@ router.get("/users/:id", authenticateToken, async (req, res)=>{
 router.delete("/users/:id", authenticateToken, async (req, res)=>{
     try {
         const id = parseInt(req.params.id);
+        const scores = await pool.query("DELETE FROM scores WHERE user_id = $1", [id]);
         const user = await pool.query("DELETE FROM users WHERE id = $1", [id]);
         res.status(200).json({user: user.rows[0]});
     } catch (error) {
