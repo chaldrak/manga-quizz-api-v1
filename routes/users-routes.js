@@ -109,6 +109,17 @@ router.get("/users/:id1/mangas/:id2/scores", authenticateToken, async (req, res)
 router.get("/users/:id/scores", authenticateToken, async (req, res)=>{
     try {
         const user_id = parseInt(req.params.id);
+        const scores = await pool.query("SELECT * FROM scores WHERE user_id = $1 ORDER BY created_date DESC", [user_id]);
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
+// Get all the scores based on user's id order by score
+router.get("/users/:id/scores/orderbyscore", authenticateToken, async (req, res)=>{
+    try {
+        const user_id = parseInt(req.params.id);
         const scores = await pool.query("SELECT * FROM scores WHERE user_id = $1 ORDER BY total DESC", [user_id]);
         res.status(200).json({scores: scores.rows});
     } catch (error) {
@@ -118,6 +129,16 @@ router.get("/users/:id/scores", authenticateToken, async (req, res)=>{
 
 // Get all the scores
 router.get("/scores", authenticateToken, async (req, res)=>{
+    try {
+        const scores = await pool.query("SELECT username, avatar, created_date, user_id, manga_id, total FROM scores AS s JOIN users AS u ON s.user_id = u.id ORDER BY created_date DESC");
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
+// Get all the scores
+router.get("/scores/orderbyscore", authenticateToken, async (req, res)=>{
     try {
         const scores = await pool.query("SELECT username, avatar, created_date, user_id, manga_id, total FROM scores AS s JOIN users AS u ON s.user_id = u.id ORDER BY total DESC");
         res.status(200).json({scores: scores.rows});
