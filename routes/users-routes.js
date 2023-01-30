@@ -105,6 +105,37 @@ router.get("/users/:id1/mangas/:id2/scores", authenticateToken, async (req, res)
     }
 })
 
+// Get all the scores based on user's id
+router.get("/users/:id/scores", authenticateToken, async (req, res)=>{
+    try {
+        const user_id = parseInt(req.params.id);
+        const scores = await pool.query("SELECT * FROM scores WHERE user_id = $1 ORDER BY total DESC", [user_id]);
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
+// Get all the scores
+router.get("/scores", authenticateToken, async (req, res)=>{
+    try {
+        const scores = await pool.query("SELECT username, avatar, created_date, user_id, manga_id, total FROM scores AS s JOIN users AS u ON s.user_id = u.id ORDER BY total DESC");
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
+// Get all the total scores
+router.get("/scores/total", authenticateToken, async (req, res)=>{
+    try {
+        const scores = await pool.query("SELECT SUM(total) AS total, user_id FROM scores GROUP BY user_id ORDER BY total DESC");
+        res.status(200).json({scores: scores.rows});
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+})
+
 // Delete all the scores of a specific user
 router.delete("/users/:id/scores", authenticateToken, async (req, res)=>{
     try {
